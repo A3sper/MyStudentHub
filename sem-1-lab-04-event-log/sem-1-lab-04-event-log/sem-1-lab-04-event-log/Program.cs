@@ -102,10 +102,9 @@ namespace sem_1_lab_04_event_log
         private static LogEntry[] Search(LogEntry[] entries, string text)
         {
             List<LogEntry> entriesRes = new List<LogEntry>();
-
             for (int i = 0; i < entries.Length; i++)
             {
-                if ((entries[i].Message.Contains(text, StringComparison.OrdinalIgnoreCase)))
+                if ((entries[i].Message.ToLower().Contains(text.ToLower())))
                 {
                     entriesRes.Add(entries[i]);
                 }
